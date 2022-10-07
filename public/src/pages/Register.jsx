@@ -21,10 +21,12 @@ function Register() {
     event.preventDefault()
     console.log(event.target)
     const { username, password } = values;
+
       const { data } = await axios.post(registerRoute, {
         username,
         password,
       });
+      console.log(data)
 
       if (data.status === false) {
         // toast.error(data.msg, toastOptions);
