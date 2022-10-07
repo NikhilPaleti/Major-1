@@ -1,0 +1,63 @@
+.StyledContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10vw;
+    align-items: center;
+    background-image: linear-gradient(#3d0145, #450135);
+}
+.Title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.Title h1{
+    color: white;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  background-color: #00000076;
+  border-radius: 30px;
+  padding: 45px 65px ;
+}
+input {
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.1rem solid #9a1bfa;
+  border-radius: 30px;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  /* &:focus {
+    border: 1px solid #997af0;
+  } */
+}
+button {
+  background-color: #9a1bfa;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  /* &:hover {
+    background-color: #9a1bfa;
+  } */
+}
+span {
+  color: white;
+}
+
+span a {
+    color: #9a1bfa;
+    text-decoration: none;
+    font-weight: bold;
+}
