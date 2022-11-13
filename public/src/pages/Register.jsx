@@ -29,7 +29,7 @@ function Register() {
       console.log(data)
 
       if (data.status === false) {
-        // toast.error(data.msg, toastOptions);
+        alert(data.msg);
       }
       if (data.status === true) {
         localStorage.setItem(

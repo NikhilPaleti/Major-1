@@ -5,14 +5,14 @@
     flex-direction: column;
     justify-content: center;
     gap: 10vw;
-    align-items: center;
+    align-items: flex-end;
+    padding-right: 5vw;
     background-image: linear-gradient(#3d0145, #450135);
 }
 .Title {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .Title h1{
@@ -60,4 +60,9 @@ span a {
     color: #9a1bfa;
     text-decoration: none;
     font-weight: bold;
+}
+
+
+input {
+  text-align: center;
 }
