@@ -1,3 +1,5 @@
+var Crypto = require('crypto');
+const CryptoJS = require('crypto-js'); 
 const Messages = require("../modules/message");
 
 module.exports.getMessages = async (req, res, next) => {
@@ -11,9 +13,12 @@ module.exports.getMessages = async (req, res, next) => {
     }).sort({ updatedAt: 1 });
 
     const projectedMessages = messages.map((msg) => {
+      var bytes  = CryptoJS.AES.decrypt(msg.message, 'Secret Passphrase');
+      var rmsg = bytes.toString(CryptoJS.enc.Utf8);
+
       return {
         fromSelf: msg.sender.toString() === from,
-        message: msg.message.text,
+        message: rmsg,
       };
     });
     res.json(projectedMessages);
@@ -24,9 +29,12 @@ module.exports.getMessages = async (req, res, next) => {
 
 module.exports.sendMessage = async (req, res, next) => {
   try {
-    const { from, to, message } = req.body;
+    const { from, to, message } = req.body;;
+
+    var emessage = CryptoJS.AES.encrypt(message, "Secret Passphrase").toString();
+
     const data = await Messages.create({
-      message: { text: message },
+      message: emessage,
       users: [from, to],
       sender: from,
     });
